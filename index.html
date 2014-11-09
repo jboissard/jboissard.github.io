@@ -150,7 +150,7 @@ footer {
 
 <tr ng-repeat="item in values">
 <td>{{item.name}}</td>
-<td ng-repeat="f in frameworks | filter:{f.id: item.framework_id}:true">{{f.name}}</td>
+<td ng-repeat="f in frameworks | filter:{id: item.framework_id}:strict">{{f.name}}</td>
 <td>{{item.framework}}</td>
 <td>{{item.reference}}</td>
 </tr>
