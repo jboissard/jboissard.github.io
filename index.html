@@ -150,6 +150,7 @@ footer {
 
 <tr ng-repeat="item in values">
 <td>{{item.name}}</td>
+<td ng-repeat="f in frameworks | filter:{f.id: item.framework_id}:true">{{item}}</td>
 <td>{{item.framework}}</td>
 <td>{{item.reference}}</td>
 </tr>
@@ -244,7 +245,7 @@ app.controller('standardVarCtrl', ['$scope', '$http', '$filter', function($scope
 
 app.controller('scalaCtrl', ['$scope', '$http', '$filter', function($scope, $http, $filter) {
   $scope.values = [
-{name: "LinkedIn", framework: "Play", reference : ""},
+{name: "LinkedIn", framework_id: 1, framework: "Play", reference : ""},
 {name: "Foursquare", framework: "Lift", reference: "https://docs.google.com/presentation/d/1y-uLNBl2cAaoFjXJI9FdvK2NnsiiBOteXAH5hkogZMo/present?slide=id.i0"},
 {name: "BBC", framework: "Scalatra", reference: "http://scalatra.org/community/built-with.html"},
 {name: "The Guardian", framework: "Play", reference: ""},
@@ -260,9 +261,9 @@ app.controller('scalaCtrl', ['$scope', '$http', '$filter', function($scope, $htt
 
 
 $scope.frameworks = [
-	{name: "Play!", link: "http://playframework.com"},
-	{name: "Scalatra", link: "http://scalatra.org"},
-	{name: "Lift", link: "http://liftweb.net"}
+	{id: 1, name: "Play!", link: "http://playframework.com"},
+	{id: 2, name: "Scalatra", link: "http://scalatra.org"},
+	{id: 3, name: "Lift", link: "http://liftweb.net"}
 ]
 
 }])
