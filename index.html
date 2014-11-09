@@ -164,20 +164,12 @@ footer {
 	</tr>
 	
 	
-	<tr>
-		<td>Play! Framework</td>
-		<td><a href="http://playframework.com">Link</a></td>
+	<tr ng-repeat="item in frameworks">
+		<td>{{item.name}}</td>
+		<td><a href="{{item.link}}">Link</a></td>
 	</tr>
 	
-	<tr>
-		<td>Scalatra</td>
-		<td><a href="http://scalatra.org">Link</a></td>
-	</tr>
-	
-	<tr>
-		<td>Lift</td>
-		<td><a href="http://liftweb.net">Link</a></td>
-	</tr>
+
 </table>
 
 </div>
@@ -263,8 +255,16 @@ app.controller('scalaCtrl', ['$scope', '$http', '$filter', function($scope, $htt
 {name: "ZapTravel", framework: "Play", reference: ""},
 {name: "Companies on Stackoverflow", framework: "Play", reference: "http://careers.stackoverflow.com/jobs/companies?searchTerm=play+framework"},
 {name: "Coursera", framework: "Play", framework: "Play", reference: "https://tech.coursera.org/blog/2014/02/18/why-we-love-scala-at-coursera/"},
-{name: "Verizon", framework: "Play (with Java)", reference: "http://www.verizon.com/about/work/jobs/2594596-software-engineer-in-functional-programming-languages"}
+{name: "Verizon  (with Java)", framework: "Play", reference: "http://www.verizon.com/about/work/jobs/2594596-software-engineer-in-functional-programming-languages"}
 ]
+
+
+$scope.frameworks = [
+	{name: "Play!", link: "http://playframework.com"},
+	{name: "Scalatra", link: "http://scalatra.org"},
+	{name: "Lift", link: "http://liftweb.net"}
+]
+
 }])
 
 
